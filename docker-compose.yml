@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  web:
+      image: pokedex-layout1
+      build:
+        context: .
+      restart: unless-stopped
+      networks:
+        - default
+      ports:
+      - "80:80"
