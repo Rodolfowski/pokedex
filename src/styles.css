@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-app-background-color);
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+:root {
+    --primary-header-title-blue: #2F3E77;
+    --secondary-header-title-red: #EA686D;
+    --arrows-background-buttom-red: #EA686D;
+    --main-app-background-color:#f6f7f9;
+  }

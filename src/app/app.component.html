@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <app-header
+      [idOrName]="idOrName"
+      (searchIdOrNameChange)="handleSearchIdOrNameChange($event)"
+    ></app-header>
+    <app-most-search
+      [selectedCard]="selectedPokemon"
+      (pokemonSelected)="handlePokemonSelected($event)"
+    ></app-most-search>
+    <app-general-pokedex
+      [idOrName]="idOrName"
+      [selectedCard]="selectedPokemon"
+      (pokemonSelected)="handlePokemonSelected($event)"
+    >
+    </app-general-pokedex>
+    <app-details-pokemon
+      [data]="selectedPokemon"
+      [pokemonFound]="pokemonFound"
+      *ngIf="showModal"
+      (closeModalEvent)="closeModal($event)"
+    >
+    </app-details-pokemon>
+  </body>
+</html>

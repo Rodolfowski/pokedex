@@ -1,0 +1,52 @@
+<div class="most-search-title">
+  <p class="">Mais Procurados</p>
+</div>
+<div class="carousel-container">
+  <div class="carousel">
+    <ul class="cards">
+      <li
+        #liElements
+        class="card"
+        *ngFor="
+          let card of cards
+            | slice : currentPopularItemsPosition : endPopularItemsPosition;
+          let i = index
+        "
+        [ngClass]="
+          this.selectedCard !== undefined &&
+          card.species.name === this.selectedCard.species.name
+            ? 'selected'
+            : ''
+        "
+        [routerLink]="['/pokemon', card.species.name]"
+        (click)="selectPokemon(card)"
+      >
+        <div class="name-id">
+          <p class="name-id-fullname">{{ card.species.name | titlecase }}</p>
+          <p class="name-id-identifier">{{ "#" + card.id }}</p>
+        </div>
+        <div class="image-container">
+          <img
+            class="cardImage"
+            [src]="card.sprites.other['official-artwork'].front_default"
+            alt=""
+          />
+        </div>
+        <div class="height-Weight-section">
+          <div class="height-Weight-titles">
+            <p class="height-title">Altura:</p>
+            <p class="weight-title">Preso:</p>
+          </div>
+          <div class="height-Weight-description">
+            <p class="height-description">{{ card.height * 10 + " Cm" }}</p>
+            <p class="weight-description">{{ card.weight / 10 + " Kg" }}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="carousel-arrows">
+    <div class="arrow-left" (click)="scrollCarousel('previous')">&lt;</div>
+    <div class="arrow-right" (click)="scrollCarousel('next')">&gt;</div>
+  </div>
+</div>

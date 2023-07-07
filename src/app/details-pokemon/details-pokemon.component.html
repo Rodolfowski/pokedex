@@ -1,0 +1,123 @@
+<ng-container *ngIf="pokemonFound == true; else notFound">
+  <div class="modal">
+    <div class="modal-content">
+      <button class="close-button" (click)="closeModal()">X</button>
+      <div class="header-information">
+        <div class="title-pokemon">
+          <p>{{ selectedPokemon.species.name | titlecase }}</p>
+        </div>
+        <div class="codeAndTypeOfPokemon">
+          <div class="idOfPokemon">
+            <p>Cod: #{{ selectedPokemon.id }}</p>
+          </div>
+          <div class="typesOfAPokemon">
+            <p>Tipo</p>
+            <div
+              class="allTypes"
+              *ngFor="let type of selectedPokemon.types; let i = index"
+              [ngStyle]="{ 'background-color': getTypeColor(type.type.name) }"
+            >
+              <p>{{ type.type.name | titlecase }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mainView">
+        <div class="allAvailableImages">
+          <div class="mainImage">
+            <img
+              [src]="
+                selectedImage === ''
+                  ? selectedPokemon.sprites.other['official-artwork']
+                      .front_default
+                  : selectedImage
+              "
+              alt=""
+            />
+          </div>
+          <div *ngIf="selectedPokemon.sprites" class="sprites-container">
+            <div
+              *ngFor="
+                let sprite of getNonNullSprites(selectedPokemon.sprites).concat(
+                  ['official-artwork']
+                )
+              "
+              class="sprite-circle"
+            >
+              <img
+                [src]="getSpriteImageUrl(sprite)"
+                alt="Sprite"
+                (click)="changeSelectedImage(getSpriteImageUrl(sprite))"
+              />
+            </div>
+          </div>
+
+          <div class="status-section">
+            <p>Status</p>
+
+            <div id="divChart">
+              <canvas
+                baseChart
+                [data]="getChartData()"
+                [options]="chartOptions"
+              ></canvas>
+            </div>
+          </div>
+
+          <div class="information-section">
+            <div class="informations">
+              <p>Informações</p>
+            </div>
+            <div class="height-Weight-section">
+              <div class="height-Weight-titles">
+                <p class="height-title">Altura:</p>
+                <p class="weight-title">Preso:</p>
+              </div>
+              <div class="height-Weight-description">
+                <p class="height-description">
+                  {{ selectedPokemon.height * 10 + " Cm" }}
+                </p>
+                <p class="weight-description">
+                  {{ selectedPokemon.weight / 10 + " Kg" }}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="description-section">
+            <div class="description-title">
+              <p>Descrição</p>
+            </div>
+            <div class="description-content">
+              <p>
+                "Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type
+                specimen book."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #notFound>
+  <div class="modal">
+    <div class="modal-content">
+      <button class="close-button" (click)="closeModal()">X</button>
+      <div class="header-information">
+        <div class="title-pokemon">
+          <p>Quem é este Pokémon?</p>
+        </div>
+      </div>
+      <div class="mainView">
+        <div class="allAvailableImages">
+          <div class="mainImageUnknown">
+            <img src="../../assets/layout1/unknownPokemon.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

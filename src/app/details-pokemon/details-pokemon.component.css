@@ -1,0 +1,255 @@
+*{
+    background-color: #fff;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  background-color: white;
+  max-width: 550px;
+}
+
+.modal-content {
+  margin-right: 0;
+  background-color: white;
+  width: 500px;
+  height: 100%;
+  padding: 20px;
+  border-radius: 4px;
+  overflow-y: auto;
+}
+.modal-content > p{
+  background-color: white;
+}
+
+.modal p {
+  margin-bottom: 10px;
+}
+
+.modal button {
+  border: none;
+  padding: 2px 4px;
+  background-color: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+  .close-button {
+    position: absolute;
+    background-color: #fff;
+    top: 20px; 
+    right: 30px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    z-index: 1; 
+}
+
+.close-button:hover {
+  color: #000;
+}
+.header-information *{
+    background-color: white;
+
+}
+.header-information{
+  display: flex;
+  flex-direction: column;
+  margin-left: 33px;
+  margin-top:128px;
+  background-color: white;
+}
+.title-pokemon{
+font-family: 'Nunito',sans-serif;
+color: var(--primary-header-title-blue);
+font-size: 35px;
+font-weight: 700;
+line-height: 48px;
+letter-spacing: 0em;
+}
+.title-pokemon-unknown{
+font-family: 'Nunito',sans-serif;
+color: var(--primary-header-title-blue);
+font-size: 35px;
+font-weight: 700;
+line-height: 48px;
+letter-spacing: 0em;
+text-align: center;
+}
+.typesOfAPokemon{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+.idOfPokemon{
+display: flex;
+ flex-direction: row;
+ align-items: center;
+ 
+}
+.idOfPokemon>p{
+  margin-bottom: 0px;
+  font-family: 'Nunito',sans-serif;
+  color: var(--primary-header-title-blue);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0em;
+}
+
+.codeAndTypeOfPokemon{
+   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.typesOfAPokemon>p{
+  margin-bottom: 0px;
+  margin-right: 15px;
+}
+.allTypes{
+  display: flex;
+  justify-content: center;
+  padding: 5px 15px;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+.allTypes>p{
+  margin-bottom: 0px;
+  background-color: inherit;
+  color: #fff;
+}
+.typesOfAPokemon{
+font-family: 'Nunito',sans-serif;
+font-size: 20px;
+font-weight: 400;
+line-height: 22px;
+letter-spacing: 0em;
+text-align: center;
+}
+.allAvailableImages{
+}
+.sprites-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin:50px 0px 60px 0px
+}
+
+.sprite-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: var(--main-app-background-color);
+  overflow: hidden;
+  
+}
+.sprite-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: var(--main-app-background-color)
+}
+.mainImage{
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+.mainImageUnknown>img{
+  width: 100%;
+}
+.mainImage>img{
+  width: 220px;
+  height: 250px;
+  background-color: #fff;
+}
+.informations{
+  font-family: 'Nunito',sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  color: var(--primary-header-title-blue);
+}
+.height-Weight-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Nunito',sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--primary-header-title-blue);
+}
+.height-Weight-titles{
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  font-size:16px;
+}
+.information-section>p{
+}
+
+.description-title{
+font-family: 'Nunito',sans-serif;
+font-size: 22px;
+font-weight: 700;
+line-height: 30px;
+letter-spacing: 0em;
+color:var(--primary-header-title-blue)
+}
+.description-content{
+font-family: 'Nunito',sans-serif;
+font-size: 16px;
+font-weight: 600;
+line-height: 22px;
+letter-spacing: 0em;
+text-align: left;
+color:var(--primary-header-title-blue)
+}
+
+.status-section{
+  color:var(--primary-header-title-blue);
+  font-family: 'Nunito',sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  
+}
+#divChart{
+  display: block;
+  width: 100%;
+}
+@media (max-width: 1210px) {
+  .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    background-color: white;
+    max-width: 100%;
+  }
+  
+  .modal-content {
+    margin-right: 0;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 4px;
+    overflow-y: auto;
+  }
+}
+

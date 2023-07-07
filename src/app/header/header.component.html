@@ -1,0 +1,84 @@
+<ng-container [ngTemplateOutlet]="isMobile ? mobileTemplate : desktopTemplate">
+  <ng-template #desktopTemplate>
+    <div class="main-header">
+      <div class="main-content">
+        <div class="company-brand-section">
+          <img
+            class="company-brand"
+            src="../../assets/layout1/Company-brand.png"
+            alt=""
+          />
+        </div>
+        <div class="main-content-description">
+          <p class="title-header-blue">
+            Explore o mundo dos <span class="title-header-red">Pokémons</span>
+          </p>
+        </div>
+        <div class="title-description-blue">
+          <p>Descubra todas as espécies de Pokémons</p>
+        </div>
+        <div class="title-input-search-pokemon">
+          <input
+            type="text"
+            class="search-input"
+            [value]="
+              idOrName !== '/pokemon' && idOrName !== undefined ? idOrName : ''
+            "
+            placeholder=""
+            #searchInput
+          />
+          <button
+            class="search-button"
+            (click)="searchPokemonIdorName(searchInput.value)"
+          >
+            Buscar
+          </button>
+        </div>
+      </div>
+      <div class="pokemon-avatars">
+        <img src="./../../assets/layout1/allPokemons.png" alt="" />
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #mobileTemplate>
+    <div class="main-header">
+      <div class="main-content">
+        <div class="company-brand-section">
+          <img
+            class="company-brand"
+            src="../../assets/layout1/Company-brand.png"
+            alt=""
+          />
+        </div>
+        <div class="main-content-description">
+          <p class="title-header-blue">
+            Explore o mundo dos <span class="title-header-red">Pokémons</span>
+          </p>
+        </div>
+        <div class="title-description-blue">
+          <p>Descubra todas as espécies de Pokémons</p>
+        </div>
+        <div class="title-input-search-pokemon">
+          <input
+            type="text"
+            class="search-input"
+            [value]="
+              idOrName !== '/pokemon' && idOrName !== undefined ? idOrName : ''
+            "
+            placeholder=""
+            #searchInput
+          />
+          <button
+            class="search-button"
+            (click)="searchPokemonIdorName(searchInput.value)"
+          >
+            Buscar
+          </button>
+        </div>
+        <div class="pokemon-avatars">
+          <img src="./../../assets/layout1/allPokemons.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ng-container>
